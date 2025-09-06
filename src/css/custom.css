@@ -4,157 +4,283 @@
  * work well for content-centric websites.
  */
 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css');
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+    /* --------------------------------------------------
+        Global Variables for GitHub-like style
+    -------------------------------------------------- */
+    /* Light theme */
+    --ee-navbar-background-color: #fefefe;
+    --ee-footer-background-color: #e8e6df;
+    --ee-background-color: #ffffff;
+    --ee-code-background: #f6f8fa;
+    --ee-font-color-base: #161616;
+    --ifm-menu-color: var(--ee-font-color-base);    /* Sets the sidebar menu item color */
+    --ifm-toc-link-color: var(--ee-font-color-base); /* Sets the table of contents link color */
+
+    /* Dark theme */
+    --ee-navbar-background-color-dark: #292929;
+    --ee-footer-background-color-dark: #292929;
+    --ee-background-color-dark: #1f1f1f;
+    --ee-code-background-dark: #313131;
+    --ee-font-color-dark: #e0e0e0;
+
+    --ee-font-size-24px: 1.5rem;        /* 24px     */
+    --ee-font-size-23-5px: 1.46875rem;  /* 23.5px   */
+    --ee-font-size-23px: 1.4375rem;     /* 23px     */
+    --ee-font-size-22-5px: 1.40625rem;  /* 22.5px   */
+    --ee-font-size-22px: 1.375rem;      /* 22px     */
+    --ee-font-size-21-5px: 1.34375rem;  /* 21.5px   */
+    --ee-font-size-21px: 1.3125rem;     /* 21px     */
+    --ee-font-size-20-5px: 1.28125rem;  /* 20.5px   */
+    --ee-font-size-20px: 1.25rem;       /* 20px     */
+    --ee-font-size-19-5px: 1.21875rem;  /* 19.5px   */
+    --ee-font-size-19px: 1.1875rem;     /* 19px     */
+    --ee-font-size-18-5px: 1.15625rem;  /* 18.5px   */
+    --ee-font-size-18px: 1.125rem;      /* 18px     */
+    --ee-font-size-17-5px: 1.09375rem;  /* 17.5px   */
+    --ee-font-size-17px: 1.0625rem;     /* 17px     */
+    --ee-font-size-16-5px: 1.03125rem;  /* 16.5px   */
+    --ee-font-size-16px: 1rem;          /* 16px     */
+    --ee-font-size-15-5px: 0.96875rem;  /* 15.5px   */
+    --ee-font-size-15px: 0.9375rem;     /* 15px     */
+    --ee-font-size-14-5px: 0.90625rem;  /* 14.5px   */
+    --ee-font-size-14px: 0.875rem;      /* 14px     */
+    --ee-font-size-13-5px: 0.84375rem;  /* 13.5px   */
+    --ee-font-size-13px: 0.8125rem;     /* 13px     */
+
+    --ee-h1-size: clamp(1.75rem, 3.2vw, 2.25rem); /* ~28–36px responsive */
+    --ee-h2-size: clamp(1.375rem, 2.4vw, 1.75rem); /* ~22–28px */
+    --ee-h3-size: clamp(1.125rem, 1.8vw, 1.25rem); /* ~18–20px */
+    --ee-h4-size: 1rem;
+
+    --ee-heading-line-height: 1.2;
+    --ee-heading-letter-spacing: -0.02em;
+    --ee-heading-font-family: 'Lora', sans-serif; /* Use a serif font for headings */
+    
+    /* --------------------------------------------------
+        INFIMA VARIABLES
+    -------------------------------------------------- */
+    --ifm-color-primary: #3578e5;
+    --ifm-color-primary-dark: #1d68e1;
+    --ifm-color-primary-darker: #1b62d4;
+    --ifm-color-primary-darkest: #1751af;
+    --ifm-color-primary-light: #4e89e8;
+    --ifm-color-primary-lighter: #5a91ea;
+    --ifm-color-primary-lightest: #80aaef;
+
+    --ifm-navbar-background-color: var(--ee-navbar-background-color);
+    --ifm-background-color: var(--ee-background-color);
+    --ifm-code-background: var(--ee-code-background);
+    /* Font styles */
+    --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --ifm-font-family-monospace: 'Google Sans Code', 'Spline Sans Mono', 'JetBrains Mono', 'Fira Code', 'Fira Mono', 'Consolas', 'Courier New', monospace;
+    --ifm-font-color-base: var(--ee-font-color-base);
+    --ifm-font-weight-light: 300;
+    --ifm-font-weight-normal: 400;
+    --ifm-font-weight-medium: 500;
+    --ifm-font-weight-semibold: 600;
+    --ifm-font-weight-bold: 700;
+    --ifm-heading-font-weight: var(--ifm-font-weight-semibold);
+
+    --ifm-hover-overlay: rgba(0, 0, 0, 0.08);
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+    --ifm-color-primary: #25c2a0;
+    --ifm-color-primary-dark: #21af90;
+    --ifm-color-primary-darker: #1fa588;
+    --ifm-color-primary-darkest: #1a8870;
+    --ifm-color-primary-light: #29d5b0;
+    --ifm-color-primary-lighter: #32d8b4;
+    --ifm-color-primary-lightest: #4fddbf;
+
+    --ifm-navbar-background-color: var(--ee-navbar-background-color-dark);
+    --ifm-menu-color: var(--ee-font-color-dark);    /* Sets the sidebar menu item color */
+    --ifm-toc-link-color: var(--ee-font-color-dark); /* Sets the table of contents link color */
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+    --ifm-font-color-base: var(--ee-font-color-dark);
+    --ifm-background-color: var(--ee-background-color-dark);
+    --ifm-code-background: var(--ee-code-background-dark);
+    --ifm-hover-overlay: rgba(255, 255, 255, 0.1);
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: 16px;
-    line-height: 1.5;
-    color: #24292f;
-    background: #fff;
+html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: inherit;
+/* --------------------------------------------------
+      HERO
+-------------------------------------------------- */
+.hero__title {
+    font-style: italic;
+    font-family: var(--ee-heading-font-family);
+    font-size: var(--ee-h1-size);
+}
+
+.hero__subtitle {
+    font-size: var(--ee-font-size-16px);
+    font-weight: var(--ifm-font-weight-normal);
+}
+
+/* --------------------------------------------------
+      NAVBAR
+-------------------------------------------------- */
+.navbar__title {
+    font-style: italic;
+    font-family: var(--ee-heading-font-family);
+    font-size: var(--ee-font-size-24px);
+    font-weight: var(--ifm-font-weight-semibold);
+}
+
+.navbar__link {
+    font-size: var(--ee-font-size-16px);
+    font-weight: var(--ifm-font-weight-semibold);
+}
+
+.navbar__link--active {
+    background: var(--ifm-hover-overlay);
+    border-radius: 1.5rem;
+}
+
+/* --------------------------------------------------
+      MARKDOWN
+-------------------------------------------------- */
+.markdown {
+    font-size: var(--ee-font-size-16px);
+    font-weight: var(--ifm-font-weight-base);
+}
+
+.markdown h1 { font-size: var(--ee-h1-size); }
+.markdown h2 { font-size: var(--ee-h2-size); }
+.markdown h3 {
+    font-size: var(--ee-h3-size);
+    font-weight: var(--ee-font-weight-medium);
+}
+.markdown h4 {
+    font-size: var(--ee-h4-size);
+    font-weight: var(--ee-font-weight-medium);
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6,
+.hero__title {
     font-weight: 600;
-    line-height: 1.25;
-    color: #24292f;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
 }
 
-h1 {
-    font-size: 2.2em;
-    border-bottom: 1px solid #d0d7de;
-    padding-bottom: 0.3em;
-    margin-top: 0;
+.markdown h1 code,
+.markdown h2 code,
+.markdown h3 code,
+.markdown h4 code,
+.markdown h5 code,
+.markdown h6 code,
+.hero__title code {
+    font-family: var(--ifm-font-family-monospace);
+    line-height: inherit;           /* match heading line-height */
+    font-weight: 600;
+    color: inherit;                 /* use heading color */
+    background-color: var(--ifm-code-background);  /* or 'transparent' */
+    padding: 0 0.25em;
+    border-radius: 6px;
+    white-space: nowrap;
+    vertical-align: baseline;
 }
 
-h2 {
-    font-size: 1.8em;
-    border-bottom: 1px solid #d0d7de;
-    padding-bottom: 0.3em;
+.markdown h1 code,
+.hero__title code {
+    font-size: clamp(calc(1.75rem * 0.85), calc(3.2vw * 0.85), calc(2.25rem * 0.85));
 }
 
-h3 {
-    font-size: 1.4em;
+.markdown h2 code {
+    font-size: clamp(calc(1.375rem * 0.85), calc(2.4vw * 0.85), calc(1.75rem * 0.85));
 }
 
-h4 {
-    font-size: 1em;
+.markdown h3 code {
+    font-size: clamp(calc(1.125rem * 0.85), calc(1.8vw * 0.85), calc(1.25rem * 0.85));
 }
 
-h5 {
-    font-size: 0.875em;
+.markdown h4 code {
+    font-size:calc(1rem * 0.85);
 }
 
-h6 {
-    font-size: 0.85em;
-    color: #6a737d;
+.theme-code-block {
+    box-shadow: var(--ifm-global-shadow-lw);
 }
 
-p {
-    margin-top: 0;
-    margin-bottom: 16px;
+code,
+pre code {
+    font-size: var(--ee-font-size-14px);
+    font-weight: var(--ifm-font-weight-normal);
+    background-color: var(--ifm-code-background);
 }
 
-ul, ol {
-    margin-top: 0;
-    margin-bottom: 16px;
-    padding-left: 2em;
+/* --------------------------------------------------
+      BREADCRUMBS & ARTICLES
+-------------------------------------------------- */
+.breadcrumbs__link {
+    font-size: 0.815rem;
 }
 
-code, pre {
-    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: 85%;
-    background: #f6f8fa;
-    border-radius: 3px;
-    padding: 0.2em 0.4em;
+/* p.text--truncate {
+    font-size: 0.9rem;
+} */
+
+/* --------------------------------------------------
+      BLOG ASIDE
+-------------------------------------------------- */
+ul.clean-list {
+    font-size: 1rem;
 }
 
-pre {
-    padding: 16px;
-    overflow: auto;
-}
-
-blockquote {
-    color: #6a737d;
-    border-left: 0.25em solid #dfe2e5;
-    padding: 0 1em;
-    margin: 0;
-    background: #f6f8fa;
-}
-
-/* Footer styles */
-.footer ul,
-.footer ol {
-    padding-left: 0 !important;
-    margin-left: 0 !important;
-}
-
-/* For docs ToC sidebar */
-.theme-doc-toc-desktop {
-    width: 320px; /* or your preferred width */
-}
-
-/* For blog ToC sidebar */
-.theme-blog-toc-desktop {
-    width: 400px;
-}
-
-/* Table of contents styles */
-.table-of-contents ul {
-    padding-left: 0.45em; /* Default is 2em; reduce as needed */
-}
-
+/* --------------------------------------------------
+      TOC
+-------------------------------------------------- */
 .table-of-contents {
-    font-family: inherit;
-    font-size: 0.9em;
-    color: #24292f;
+    font-size: 0.87rem;
+}
+.table-of-contents code,
+.table-of-contents pre code {
+    font-size: 0.75rem;
 }
 
-/* Custom styles for markdown content */
-.markdown ul,
-.markdown ol {
-    margin-top: 0;
-    margin-bottom: 16px;
-    padding-left: 2em;
+/* --------------------------------------------------
+      TUTORIAL SIDEBAR
+-------------------------------------------------- */
+.theme-doc-sidebar-menu {
+    font-size: var(--ee-font-size-15-5px);
+    font-weight: var(--ifm-font-weight-normal);
 }
 
-/* Use JetBrains Mono, fallback to Spline Sans Mono, then system monospace */
-.markdown code,
-.markdown pre,
-.markdown pre code {
-    font-family: 'Spline Sans Mono', 'JetBrains Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-    font-size: 0.92em;
+/* --------------------------------------------------
+   👣 FOOTER
+-------------------------------------------------- */
+/* To get the footer background to toggle color, we need to use [data-theme='dark'] along with '.footer' class name. */
+[data-theme='dark'] .footer {
+    --ifm-footer-background-color: var(--ee-footer-background-color-dark);
 }
 
-.markdown hr {
-    width: 75%;
-    margin: 2em auto;
-    border: none;
-    border-top: 3px solid #d0d7de;
+.footer {
+    --ifm-footer-color: var(--ifm-font-color-base);
+    --ifm-footer-title-color: var(--ifm-font-color-base);
+    --ifm-footer-background-color: var(--ee-footer-background-color);
+    --ifm-footer-link-color: var(--ifm-font-color-base);
+}
+
+.theme-layout-footer-column {
+    margin-left: 20%;
+    margin-right: 20%;
 }

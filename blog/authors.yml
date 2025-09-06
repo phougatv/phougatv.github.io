@@ -26,10 +26,11 @@ slorber:
 
 phougatv:
   name: Vedant Phougat
-  title: Senior Software Engineer
+  title: Software Engineer
   url: https://linkedin.com/in/phougatv
   image_url: https://github.com/phougatv.png
-  page: true
+  page:
+    permalink: '/all-vedant-phougat-articles'  
   socials:
         x: phougatv
         linkedin: phougatv
