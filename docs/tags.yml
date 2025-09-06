@@ -1,0 +1,49 @@
+csharp:
+  label: C#
+  permalink: /csharp
+  description: Guides and best practices for building applications with C# — from project setup to deployment.
+
+dotnet:
+  label: .NET
+  permalink: /dotnet
+  description: Guides and best practices for building applications with .NET — from project setup to deployment.
+
+aspnet:
+  label: ASP.NET
+  permalink: /aspnet
+  description: Guides and best practices for building applications with ASP.NET Core — from project setup to deployment.
+
+sql:
+  label: SQL Server
+  permalink: /sql-server
+  description: Guides and best practices for working with Microsoft SQL Server — from database design to performance tuning.
+
+http-client:
+  label: HTTP Client
+  permalink: /http-client
+  description: Guides and best practices for using HttpClient in .NET — creation and reuse patterns, lifetime management, performance tuning, resilience (retries, timeouts, circuit-breakers), authentication, and robust async/error handling.
+
+middleware:
+  label: Middleware
+  permalink: /middleware
+  description: Guides and best practices for implementing middleware in ASP.NET Core applications — request processing, dependency injection, error handling, and performance optimization.
+
+middleware-pipeline:
+  label: Middleware Pipeline
+  permalink: /middleware-pipeline
+  description: Guides and best practices for building middleware pipelines in ASP.NET Core — component registration, ordering, and execution.
+
+lld:
+  label: Low-Level Design
+  permalink: /lld
+  description: Guides and best practices for low-level design (LLD) — principles, patterns, and best practices for designing robust and maintainable systems.
+
+hdd:
+  label: High-Level Design
+  permalink: /hdd
+  description: Guides and best practices for high-level design (HDD) — principles, patterns, and best practices for designing robust and maintainable systems.
+
+system-design:
+  label: System Design
+  permalink: /system-design
+  description: Guides and best practices for designing scalable and maintainable systems — architecture patterns, microservices, event-driven design, and more.
