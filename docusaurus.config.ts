@@ -164,22 +164,28 @@ const config: Config = {
                 },
                 {
                     type: 'docSidebar',
+                    sidebarId: 'learningSourcesSidebar',
+                    position: 'right',
+                    label: 'Learning Sources',
+                },
+                {
+                    type: 'docSidebar',
                     sidebarId: 'resumeSidebar',
                     position: 'right',
                     label: 'Resume',
                 },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'bookshelfSidebar',
-                    position: 'right',
-                    label: 'Bookshelf',
-                },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'papershelfSidebar',
-                    position: 'right',
-                    label: 'Papershelf',
-                },
+                // {
+                //     type: 'docSidebar',
+                //     sidebarId: 'bookshelfSidebar',
+                //     position: 'right',
+                //     label: 'Books',
+                // },
+                // {
+                //     type: 'docSidebar',
+                //     sidebarId: 'papershelfSidebar',
+                //     position: 'right',
+                //     label: 'Papershelf',
+                // },
                 // {
                 //     type: 'docSidebar',
                 //     sidebarId: 'tddSidebar',

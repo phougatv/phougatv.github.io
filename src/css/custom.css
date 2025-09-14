@@ -16,6 +16,8 @@
     --ee-background-color: #ffffff;
     --ee-code-background: #f6f8fa;
     --ee-font-color-base: #161616;
+    --ee-h1-h2-bottom-border-color: #d0d0d0; /* Border color for h1 and h2 in markdown */
+    --ee-hr-color: #d0d7de; /* Horizontal rule color */
     --ifm-menu-color: var(--ee-font-color-base);    /* Sets the sidebar menu item color */
     --ifm-toc-link-color: var(--ee-font-color-base); /* Sets the table of contents link color */
 
@@ -25,6 +27,7 @@
     --ee-background-color-dark: #1f1f1f;
     --ee-code-background-dark: #313131;
     --ee-font-color-dark: #e0e0e0;
+    --ee-h1-h2-bottom-border-color-dark: #666666; /* Border color for h1 and h2 in markdown */
 
     --ee-font-size-24px: 1.5rem;        /* 24px     */
     --ee-font-size-23-5px: 1.46875rem;  /* 23.5px   */
@@ -50,13 +53,11 @@
     --ee-font-size-13-5px: 0.84375rem;  /* 13.5px   */
     --ee-font-size-13px: 0.8125rem;     /* 13px     */
 
-    --ee-h1-size: clamp(1.75rem, 3.2vw, 2.25rem); /* ~28–36px responsive */
-    --ee-h2-size: clamp(1.375rem, 2.4vw, 1.75rem); /* ~22–28px */
-    --ee-h3-size: clamp(1.125rem, 1.8vw, 1.25rem); /* ~18–20px */
+    --ee-h1-size: clamp(1.85rem, 4vw, 2rem);
+    --ee-h2-size: clamp(1.4rem, 3vw, 1.6rem);
+    --ee-h3-size: clamp(1.2rem, 2.5vw, 1.3rem);
     --ee-h4-size: 1rem;
 
-    --ee-heading-line-height: 1.2;
-    --ee-heading-letter-spacing: -0.02em;
     --ee-heading-font-family: 'Lora', sans-serif; /* Use a serif font for headings */
     
     /* --------------------------------------------------
@@ -106,9 +107,12 @@
     --ifm-background-color: var(--ee-background-color-dark);
     --ifm-code-background: var(--ee-code-background-dark);
     --ifm-hover-overlay: rgba(255, 255, 255, 0.1);
+    --ee-h1-h2-bottom-border-color: var(--ee-h1-h2-bottom-border-color-dark);
+    --ee-hr-color: #666666;
 }
 
-html, body {
+html,
+body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -156,18 +160,27 @@ html, body {
     font-size: var(--ee-font-size-16px);
     font-weight: var(--ifm-font-weight-base);
 }
+.markdown h1,
+.markdown h2 {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--ee-h1-h2-bottom-border-color);
+}
 
-.markdown h1 { font-size: var(--ee-h1-size); }
-.markdown h2 { font-size: var(--ee-h2-size); }
+.markdown h1 {
+    font-size: var(--ee-h1-size);
+    padding-bottom: 0.35rem;
+}
+.markdown h2 {
+    font-size: var(--ee-h2-size);
+    padding-bottom: 0.25rem;
+}
 .markdown h3 {
     font-size: var(--ee-h3-size);
-    font-weight: var(--ee-font-weight-medium);
 }
 .markdown h4 {
     font-size: var(--ee-h4-size);
-    font-weight: var(--ee-font-weight-medium);
 }
-
 .markdown h1,
 .markdown h2,
 .markdown h3,
@@ -175,13 +188,14 @@ html, body {
 .markdown h5,
 .markdown h6,
 .hero__title {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    line-height: 1.25;
+    letter-spacing: -0.0009em;
     margin-top: 1.5rem;
     margin-bottom: 0.8rem;
 }
-
 .markdown h1 code,
 .markdown h2 code,
 .markdown h3 code,
@@ -199,22 +213,27 @@ html, body {
     white-space: nowrap;
     vertical-align: baseline;
 }
-
 .markdown h1 code,
 .hero__title code {
     font-size: clamp(calc(1.75rem * 0.85), calc(3.2vw * 0.85), calc(2.25rem * 0.85));
 }
-
 .markdown h2 code {
     font-size: clamp(calc(1.375rem * 0.85), calc(2.4vw * 0.85), calc(1.75rem * 0.85));
 }
-
 .markdown h3 code {
     font-size: clamp(calc(1.125rem * 0.85), calc(1.8vw * 0.85), calc(1.25rem * 0.85));
 }
-
 .markdown h4 code {
     font-size:calc(1rem * 0.85);
+}
+.markdown hr {
+    width: 65%;
+    margin: 2.5rem auto;
+    height: .25em;
+    padding: 0;
+    border: 0;
+    border-radius: 1em;
+    background: var(--ee-hr-color);
 }
 
 .theme-code-block {
