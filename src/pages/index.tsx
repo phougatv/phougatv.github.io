@@ -33,10 +33,10 @@ function HomepageHeader() {
                     This site is where I share what I’ve learned — through blogs, tutorials, and personal projects.
                     I hope you find something useful here!
                     <br></br>
-                    If you would like to connect with me, message me via
+                    If you would like to connect, message me via
                     {' '}<Link to='https://linkedin.com/in/phougatv'>LinkedIn</Link>{' '}
                     or
-                    {' '}<Link to='https://x.com/phougatv'>X (formely Twitter).</Link>{' '}
+                    {' '}<Link to='https://x.com/phougatv'>X (formerly Twitter).</Link>{' '}
                     <br></br>
                 </p>
             </div>
@@ -48,7 +48,7 @@ export default function Home(): ReactNode {
     const { siteConfig } = useDocusaurusContext();
     return (
         <Layout
-            title={`Hello from ${siteConfig.title}`}
+            title={`${siteConfig.title}`}
             description="Description will go into a meta tag in <head />">
             <HomepageHeader />
         </Layout>
