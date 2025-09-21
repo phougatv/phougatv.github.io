@@ -8,10 +8,10 @@ pagination_prev: null
 ---
 
 ## What I do?
-- Ship backend features that works the way users expect, with clear interfaces and predictable behavior.
+<!-- - Ship backend features that works the way users expect, with clear interfaces and predictable behavior.
 - Explain trade-offs in simple terms so stakeholders can choose confidently.
 - Prevent "mistry-outages" by fixing root causes and building guardrails.
-- Keep costs sensible by designing for scale without over-engineering.
+- Keep costs sensible by designing for scale without over-engineering. -->
 
 ## Key Accomplishments
 ## Technical Skills
