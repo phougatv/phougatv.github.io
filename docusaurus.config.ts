@@ -6,8 +6,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
     title: 'Evolving Engineer',
-    tagline: 'Dinosaurs are cool',
-    favicon: 'img/favicon.ico',
+    tagline: 'Stop guessing. Start engineering.',
+    // favicon: 'img/favicon.ico',
 
     stylesheets: [
         {

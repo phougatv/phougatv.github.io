@@ -88,9 +88,9 @@ And the message `"Hello from 3rd (Run) middleware."` will be returned as the rep
 
 ### Middleware as a separate class
 In this approach we will define the middleware in a separate class and then register it using `UseMiddleware<T>` extension method. It is good for scenarios where we need:
-- Modularity — each middleware focuses on a specific task, improving code clarity and separation of concerns.
-- Reusability — logic like authentication can be reused across multiple services.
-- Maintainability — any update to functionality require changes in only one place.
+- Modularity – each middleware focuses on a specific task, improving code clarity and separation of concerns.
+- Reusability – logic like authentication can be reused across multiple services.
+- Maintainability – any update to functionality require changes in only one place.
 
 ```cs
 //=== Defining the middleware ===

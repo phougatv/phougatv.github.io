@@ -4,18 +4,19 @@
  * work well for content-centric websites.
  */
 
-@import url('https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css');
+/* @import url('https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css'); */
 /* You can override the default Infima variables here. */
 :root {
     /* --------------------------------------------------
         Global Variables for GitHub-like style
     -------------------------------------------------- */
     /* Light theme */
-    --ee-navbar-background-color: #fefefe;
-    --ee-footer-background-color: #e8e6df;
+    --ee-navbar-background-color: #E4E7EB;
+    --ee-footer-background-color: #E4E7EB;
     --ee-background-color: #ffffff;
     --ee-code-background: #f6f8fa;
-    --ee-font-color-base: #161616;
+    /* --ee-font-color-base: #161616; */
+    --ee-font-color-base: #24292e;
     --ee-h1-h2-bottom-border-color: #d0d0d0; /* Border color for h1 and h2 in markdown */
     --ee-hr-color: #d0d7de; /* Horizontal rule color */
     --ifm-menu-color: var(--ee-font-color-base);    /* Sets the sidebar menu item color */
@@ -293,10 +294,11 @@ ul.clean-list {
 }
 
 .footer {
-    --ifm-footer-color: var(--ifm-font-color-base);
-    --ifm-footer-title-color: var(--ifm-font-color-base);
+    /* --ifm-footer-color: var(--ifm-font-color-base); */
+    /* --ifm-footer-title-color: var(--ifm-font-color-base); */
     --ifm-footer-background-color: var(--ee-footer-background-color);
-    --ifm-footer-link-color: var(--ifm-font-color-base);
+    --ifm-footer-link-color: #333333;
+    /* --ifm-footer-link-color: var(--ifm-font-color-base); */
 }
 
 .theme-layout-footer-column {
