@@ -11,8 +11,8 @@
         Global Variables for GitHub-like style
     -------------------------------------------------- */
     /* Light theme */
-    --ee-navbar-background-color: #E4E7EB;
-    --ee-footer-background-color: #E4E7EB;
+    --ee-navbar-background-color: #e2e1dc;
+    --ee-footer-background-color: #e2e1dc;
     --ee-background-color: #ffffff;
     --ee-code-background: #f6f8fa;
     /* --ee-font-color-base: #161616; */
@@ -298,7 +298,7 @@ ul.clean-list {
     /* --ifm-footer-title-color: var(--ifm-font-color-base); */
     --ifm-footer-background-color: var(--ee-footer-background-color);
     --ifm-footer-link-color: #333333;
-    /* --ifm-footer-link-color: var(--ifm-font-color-base); */
+    --ifm-footer-link-color: var(--ifm-font-color-base);
 }
 
 .theme-layout-footer-column {

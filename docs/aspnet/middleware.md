@@ -1,10 +1,11 @@
 ---
+title: ''
+sidebar_label: Middleware and request pipeline
 sidebar_position: 2
 tags: [dotnet, aspnet, middleware, middleware-pipeline]
 author: phougatv
 ---
 
-# Middleware and request pipeline
 In this post we will discuss and learn about request delegate and middleware, and and how do they form request pipeline?
 
 ## I. Request delegate
