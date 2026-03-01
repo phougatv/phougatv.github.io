@@ -1,18 +1,30 @@
 ---
+title: ''
+sidebar_label: Best Practices & Guidelines
 sidebar_position: 0
 ---
 
-# Best Practices & Guidelines
-
-## 1. Framework design guidelines
+# 1. Framework design guidelines
 - [Framework Design Guidelines - MSDN](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/)
 
 ## 2. Code analysis and quality
-- [Code Analysis](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/overview)
-- [Code Quality Rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/)
-- [Code Quality - Performance Rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/performance-warnings)
-
----
+- Code quality rules
+  - [Design rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/design-warnings)
+  - [Documentation rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/documentation-warnings)
+  - [Globalization rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/globalization-warnings)
+  - [Portability and interoperability rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/interoperability-warnings)
+  - [Maintainability rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/maintainability-warnings)
+  - [Naming rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/naming-warnings)
+  - [Performance rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/performance-warnings)
+  - [SingleFile rules](https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/warnings/overview)
+  - [Reliability rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/reliability-warnings)
+  - [Security rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/security-warnings)
+  - [Usage rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/usage-warnings)
+- Code style rules
+  - [Language and unnecessary rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/language-rules)
+  - [Miscellaneous rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/miscellaneous-rules)
+  - [Formatting rule (IDE0055)](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0055)
+  - [Code-style naming rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/naming-rules)
 
 ## 3. `HttpClient` guidelines
 - [`HttpClient` Guidance](https://github.com/davidfowl/AspNetCoreDiagnosticScenarios/blob/master/HttpClientGuidance.md) by David Fowler
@@ -35,7 +47,8 @@ sidebar_position: 0
 ## 5. Memory management guidelines
 - [Dispose Pattern](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/dispose-pattern)
 - [`IDisposable.Dispose` Method](https://learn.microsoft.com/en-us/dotnet/api/system.idisposable.dispose)
-- [`IDisposable`: What Your Mother Never Told You About Resource Deallocation](https://www.codeproject.com/KB/dotnet/IDisposable.aspx) by Stephen Cleary
+- [`IDisposable`: What Your Mother Never Told You About Resource Deallocation](https://www.codeproject.com/articles/IDisposable-What-Your-Mother-Never-Told-You-About) by Stephen Cleary
+<!-- - [`IDisposable`: What Your Mother Never Told You About Resource Deallocation](https://www.codeproject.com/KB/dotnet/IDisposable.aspx) by Stephen Cleary -->
 
 ## 6. Diagnostics, instrumentation, observability, and tracing
 - [Diagnostics and Instrumentation](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/)

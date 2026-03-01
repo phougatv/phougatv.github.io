@@ -11,55 +11,18 @@ const config: Config = {
 
     stylesheets: [
         {
+            // Display font — used for headings, navbar brand, footer copyright
             href: 'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap',
             type: 'text/css',
         },
         {
-            href: 'https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@100;200;300;400;500;600;700;800;900&display=swap',
+            // Monospace font — used for all code blocks and inline code
+            href: 'https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400;500;600;700&display=swap',
             type: 'text/css',
         },
         {
-            href: 'https://fonts.googleapis.com/css2?family=Assistant:wght@100;200;300;400;500;600;700;800;900&display=swap',
-            type: 'text/css',
-        },
-        {
-            href: 'https://fonts.googleapis.com/css2?family=Segoe+UI:wght@100;200;300;400;500;600;700;800;900&display=swap',
-            type: 'text/css',
-        },
-        {
-            href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap',
-            type: 'text/css',
-        },
-        {
-            href: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap',
-            type: 'text/css',
-        },
-        {
-            href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap',
-            type: 'text/css',
-        },
-        {
-            href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap',
-            type: 'text/css',
-        },
-        {
-            href: 'https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap',
-            type: 'text/css',
-        },
-        {
-            href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap',
-            type: 'text/css',
-        },
-        {
-            href: 'https://fonts.googleapis.com/css2?family=Gabarito:wght@100;200;300;400;500;600;700;800;900&display=swap',
-            type: 'text/css',
-        },
-        {
-            href: 'https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap',
-            type: 'text/css',
-        },
-        {
-            href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap',
+            // Body fallback for non-Windows — only loaded when Segoe UI is absent
+            href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
             type: 'text/css',
         }
     ],
@@ -99,28 +62,8 @@ const config: Config = {
                     routeBasePath: '/', // Serve docs at the root
                     sidebarPath: './sidebars.ts',
                     onInlineTags: 'throw'
-
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
-                    //editUrl:
-                    //    'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
                 },
                 blog: false,
-                // blog: {
-                //     showReadingTime: true,
-                //     feedOptions: {
-                //         type: ['rss', 'atom'],
-                //         xslt: true,
-                //     },
-                //     // Please change this to your repo.
-                //     // Remove this to remove the "edit this page" links.
-                //     //editUrl:
-                //     //    'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-                //     // Useful options to enforce blogging best practices
-                //     onInlineTags: 'warn',
-                //     onInlineAuthors: 'warn',
-                //     onUntruncatedBlogPosts: 'warn',
-                // },
                 theme: {
                     customCss: './src/css/custom.css',
                 },
@@ -138,80 +81,12 @@ const config: Config = {
             //    src: 'img/logo.svg',
             //},
             items: [
-                // {
-                //     type: 'docSidebar',
-                //     sidebarId: 'tutorialSidebar',
-                //     position: 'left',
-                //     label: 'Docs',
-                // },
                 {
                     type: 'docSidebar',
-                    sidebarId: 'dotnetSidebar',
+                    sidebarId: 'articleSidebar',
                     position: 'left',
-                    label: 'C# .NET',
-                },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'aspnetSidebar',
-                    position: 'left',
-                    label: 'ASP.NET',
-                },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'interviewSidebar',
-                    position: 'left',
-                    label: 'Interview',
-                },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'learningSourcesSidebar',
-                    position: 'right',
-                    label: 'Learning Sources',
-                },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'resumeSidebar',
-                    position: 'right',
-                    label: 'Resume',
-                },
-                // {
-                //     type: 'docSidebar',
-                //     sidebarId: 'bookshelfSidebar',
-                //     position: 'right',
-                //     label: 'Books',
-                // },
-                // {
-                //     type: 'docSidebar',
-                //     sidebarId: 'papershelfSidebar',
-                //     position: 'right',
-                //     label: 'Papershelf',
-                // },
-                // {
-                //     type: 'docSidebar',
-                //     sidebarId: 'tddSidebar',
-                //     position: 'left',
-                //     label: 'TDD',
-                // },
-                // {
-                //     to: '/blog',
-                //     label: 'Blog',
-                //     position: 'left'
-                // }
-                //{
-                //    href: 'https://www.linkedin.com/in/phougatv/',
-                //    label: 'LinkedIn',
-                //    position: 'right',
-                //},
-                //{
-                //    href: 'https://github.com/facebook/docusaurus',
-                //    label: 'GitHub',
-                //    position: 'right',
-                //},
-                //{
-                //    href: 'https://x.com/phougatv',
-                //    label: 'X (Twitter)',
-                //    position: 'right',
-                //}
+                    label: 'Articles',
+                }
             ],
         },
         footer: {
@@ -219,68 +94,39 @@ const config: Config = {
             links: [
                 //========== Simple layout ==========
                 {
-                   label: 'LinkedIn',
-                   to: 'https://linkedin.com/in/phougatv'
+                    label: 'LinkedIn',
+                    to: 'https://linkedin.com/in/phougatv'
                 },
                 {
-                   label: 'GitHub',
-                   to: 'https://github.com/phougatv'
+                    label: 'GitHub',
+                    to: 'https://github.com/phougatv'
                 },
                 {
-                   label: 'StackOverflow',
-                   to: 'https://stackoverflow.com/users/3591973/phougatv'
+                    label: 'StackOverflow',
+                    to: 'https://stackoverflow.com/users/3591973/phougatv'
                 },
                 {
-                   label: 'X (Twitter)',
-                   to: 'https://x.com/phougatv'
+                    label: 'X (Twitter)',
+                    to: 'https://x.com/phougatv'
                 }
-
-                //========== Multi-column layout ==========
-                // {
-                //     title: 'Code',
-                //     items: [
-                //         {
-                //             label: 'GitHub',
-                //             to: 'https://github.com/phougatv'
-                //         },
-                //         {
-                //             label: 'StackOverflow',
-                //             to: 'https://stackoverflow.com/users/3591973/phougatv'
-                //         }
-                //     ]
-                // },
-                // {
-                //     title: 'Social',
-                //     items: [
-                //         {
-                //             label: 'LinkedIn',
-                //             to: 'https://linkedin.com/in/phougatv'
-                //         },
-                //         {
-                //             label: 'X (Twitter)',
-                //             to: 'https://x.com/phougatv'
-                //         }
-                //     ]
-                // }
-                //{
-                //    title: 'More',
-                //    items: [
-                //        {
-                //            label: 'Blog',
-                //            to: '/blog',
-                //        },
-                //        {
-                //            label: 'GitHub',
-                //            href: 'https://github.com/facebook/docusaurus',
-                //        },
-                //    ],
-                //},
             ],
             copyright: `Copyright © ${new Date().getFullYear()} Evolving Engineer, Inc. Built with Docusaurus.`,
         },
         prism: {
-            theme: prismThemes.vsLight,
-            darkTheme: prismThemes.vsDark,
+            theme: {
+                ...prismThemes.vsLight,
+                plain: {
+                    ...prismThemes.vsLight.plain,
+                    backgroundColor: '#f3f4f6'
+                }
+            },
+            darkTheme: {
+                ...prismThemes.vsDark,
+                plain: {
+                    ...prismThemes.vsDark.plain,
+                    backgroundColor: '#2d3139'
+                }
+            },
             additionalLanguages: ['csharp']
         },
     } satisfies Preset.ThemeConfig,

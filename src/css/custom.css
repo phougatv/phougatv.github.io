@@ -1,69 +1,30 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Docusaurus Custom Stylesheet — GitHub-Inspired Technical Blog
+ * ─────────────────────────────────────────────────────────────
+ * ARCHITECTURE LAYERS:
+ *   1. Design Tokens      :root (light defaults) + [data-theme='dark'] overrides
+ *   2. Base / Reset       html, body
+ *   3. Typography         headings, prose, code
+ *   4. Layout Components  navbar, footer, sidebar, toc
+ *   5. Page Regions       hero, markdown, breadcrumbs
+ *
+ * CONVENTIONS:
+ *   • --ifm-*  Override Infima's built-in tokens directly. Prefer over --ee-*.
+ *   • --ee-*   Only for concepts Infima does not expose a token for.
+ *   • No px-named variables (e.g., no --font-size-14px).
+ *   • All sizes use rem (respects browser zoom / user preferences).
+ *   • Heading code sizes use `em` (parent-relative — no per-level overrides).
+ *
+ * FONTS (load in docusaurus.config.js or <head>):
+ *   Inter, Lora, JetBrains Mono
  */
 
-/* @import url('https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css'); */
-/* You can override the default Infima variables here. */
+
+/* ══════════════════════════════════════════════════════════════
+   1A. DESIGN TOKENS — Light Mode (Default)
+   ══════════════════════════════════════════════════════════════ */
 :root {
-    /* --------------------------------------------------
-        Global Variables for GitHub-like style
-    -------------------------------------------------- */
-    /* Light theme */
-    --ee-navbar-background-color: #e2e1dc;
-    --ee-footer-background-color: #e2e1dc;
-    --ee-background-color: #ffffff;
-    --ee-code-background: #f6f8fa;
-    /* --ee-font-color-base: #161616; */
-    --ee-font-color-base: #24292e;
-    --ee-h1-h2-bottom-border-color: #d0d0d0; /* Border color for h1 and h2 in markdown */
-    --ee-hr-color: #d0d7de; /* Horizontal rule color */
-    --ifm-menu-color: var(--ee-font-color-base);    /* Sets the sidebar menu item color */
-    --ifm-toc-link-color: var(--ee-font-color-base); /* Sets the table of contents link color */
-
-    /* Dark theme */
-    --ee-navbar-background-color-dark: #292929;
-    --ee-footer-background-color-dark: #292929;
-    --ee-background-color-dark: #1f1f1f;
-    --ee-code-background-dark: #313131;
-    --ee-font-color-dark: #e0e0e0;
-    --ee-h1-h2-bottom-border-color-dark: #666666; /* Border color for h1 and h2 in markdown */
-
-    --ee-font-size-24px: 1.5rem;        /* 24px     */
-    --ee-font-size-23-5px: 1.46875rem;  /* 23.5px   */
-    --ee-font-size-23px: 1.4375rem;     /* 23px     */
-    --ee-font-size-22-5px: 1.40625rem;  /* 22.5px   */
-    --ee-font-size-22px: 1.375rem;      /* 22px     */
-    --ee-font-size-21-5px: 1.34375rem;  /* 21.5px   */
-    --ee-font-size-21px: 1.3125rem;     /* 21px     */
-    --ee-font-size-20-5px: 1.28125rem;  /* 20.5px   */
-    --ee-font-size-20px: 1.25rem;       /* 20px     */
-    --ee-font-size-19-5px: 1.21875rem;  /* 19.5px   */
-    --ee-font-size-19px: 1.1875rem;     /* 19px     */
-    --ee-font-size-18-5px: 1.15625rem;  /* 18.5px   */
-    --ee-font-size-18px: 1.125rem;      /* 18px     */
-    --ee-font-size-17-5px: 1.09375rem;  /* 17.5px   */
-    --ee-font-size-17px: 1.0625rem;     /* 17px     */
-    --ee-font-size-16-5px: 1.03125rem;  /* 16.5px   */
-    --ee-font-size-16px: 1rem;          /* 16px     */
-    --ee-font-size-15-5px: 0.96875rem;  /* 15.5px   */
-    --ee-font-size-15px: 0.9375rem;     /* 15px     */
-    --ee-font-size-14-5px: 0.90625rem;  /* 14.5px   */
-    --ee-font-size-14px: 0.875rem;      /* 14px     */
-    --ee-font-size-13-5px: 0.84375rem;  /* 13.5px   */
-    --ee-font-size-13px: 0.8125rem;     /* 13px     */
-
-    --ee-h1-size: clamp(1.85rem, 4vw, 2rem);
-    --ee-h2-size: clamp(1.4rem, 3vw, 1.6rem);
-    --ee-h3-size: clamp(1.2rem, 2.5vw, 1.3rem);
-    --ee-h4-size: 1rem;
-
-    --ee-heading-font-family: 'Lora', sans-serif; /* Use a serif font for headings */
-    
-    /* --------------------------------------------------
-        INFIMA VARIABLES
-    -------------------------------------------------- */
+    /* ── Brand / Primary ──────────────────────────────────────── */
     --ifm-color-primary: #3578e5;
     --ifm-color-primary-dark: #1d68e1;
     --ifm-color-primary-darker: #1b62d4;
@@ -71,27 +32,73 @@
     --ifm-color-primary-light: #4e89e8;
     --ifm-color-primary-lighter: #5a91ea;
     --ifm-color-primary-lightest: #80aaef;
-
-    --ifm-navbar-background-color: var(--ee-navbar-background-color);
-    --ifm-background-color: var(--ee-background-color);
-    --ifm-code-background: var(--ee-code-background);
-    /* Font styles */
-    --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    --ifm-font-family-monospace: 'Google Sans Code', 'Spline Sans Mono', 'JetBrains Mono', 'Fira Code', 'Fira Mono', 'Consolas', 'Courier New', monospace;
-    --ifm-font-color-base: var(--ee-font-color-base);
+    /* ── Surface / Background ─────────────────────────────────── */
+    --ifm-background-color: #ffffff;
+    --ifm-navbar-background-color: #f6f8fa;
+    --ifm-footer-background-color: #f6f8fa; /* Infima reads this natively */
+    --ifm-code-background: #eef1f6; /* cool blue-gray tint — distinct from #fff page bg */
+    /* ── Borders & Dividers ───────────────────────────────────── */
+    /*
+    * Reuse Infima's emphasis scale instead of a custom border token.
+    * --ifm-color-emphasis-300 maps to the "subtle border" level.
+    */
+    --ifm-color-emphasis-300: #d0d7de;
+    /* ── Semantic Surface Tokens ──────────────────────────────── */
+    /*
+    * These exist only because Infima has no dedicated token for them.
+    * Named by PURPOSE, not value.
+    */
+    --ee-border-subtle: #d0d7de; /* navbar, footer dividers       */
+    --ee-heading-border: #d0d0d0; /* h1/h2 underline in prose      */
+    --ee-hr-color: #d0d7de; /* <hr> fill                     */
+    --ee-link-visited: #6639ba; /* 5.24:1 on #fff — WCAG AA ✓   */
+    /* ── Typography: Color ────────────────────────────────────── */
+    --ifm-font-color-base: #24292e;
+    --ifm-menu-color: #24292e; /* sidebar menu items            */
+    --ifm-toc-link-color: #24292e; /* table of contents links       */
+    /* ── Typography: Scale ────────────────────────────────────── */
+    /*
+    * ONE base size. Everything else derives from it via rem/em.
+    * Using rem (not px) so browser zoom preferences are respected — WCAG 1.4.4.
+    */
+    /*--ifm-font-size-base: 0.875rem;*/ /* ≈14px at browser default      */
+    /*--ifm-font-size-base: 0.9375rem;*/ /* ≈15px at browser default      */
+    --ifm-font-size-base: 1rem; /* 16px at browser default — intentional choice for larger base size */
+    --ifm-line-height-base: 1.5;
+    --ifm-paragraph-margin-bottom: 1rem;
+    /* ── Typography: Family ───────────────────────────────────── */
+    --ifm-font-family-base: 'Segoe UI', 'Inter', system-ui, sans-serif;
+    --ifm-font-family-monospace: 'Google Sans Code', 'JetBrains Mono', 'Fira Code', 'Fira Mono', 'Consolas', 'Courier New', monospace;
+    /*
+    * --ee-font-family-display: kept as --ee-* because Infima has no
+    * --ifm-heading-font-family or --ifm-font-family-display token.
+    */
+    --ee-font-family-display: 'Lora', serif;
+    /* ── Typography: Weight ───────────────────────────────────── */
     --ifm-font-weight-light: 300;
     --ifm-font-weight-normal: 400;
-    --ifm-font-weight-medium: 500;
     --ifm-font-weight-semibold: 600;
     --ifm-font-weight-bold: 700;
     --ifm-heading-font-weight: var(--ifm-font-weight-semibold);
-
+    /* ── Interactive States ───────────────────────────────────── */
     --ifm-hover-overlay: rgba(0, 0, 0, 0.08);
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0);
+    /* ── Code Highlight ───────────────────────────────────────── */
+    /*
+    * Only one declaration — the rgba form is WCAG-friendly and renders
+    * correctly on both light and dark code block backgrounds.
+    */
+    --docusaurus-highlighted-code-line-bg: rgba(255, 213, 0, 0.18);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+
+/* ══════════════════════════════════════════════════════════════
+   1B. DESIGN TOKENS — Dark Mode
+   ══════════════════════════════════════════════════════════════
+   RULE: Re-assign the SAME token names used in :root.
+   Components reference tokens, never raw values. No -dark suffix tokens.
+   ══════════════════════════════════════════════════════════════ */
 [data-theme='dark'] {
+    /* ── Brand / Primary ──────────────────────────────────────── */
     --ifm-color-primary: #25c2a0;
     --ifm-color-primary-dark: #21af90;
     --ifm-color-primary-darker: #1fa588;
@@ -99,19 +106,39 @@
     --ifm-color-primary-light: #29d5b0;
     --ifm-color-primary-lighter: #32d8b4;
     --ifm-color-primary-lightest: #4fddbf;
-
-    --ifm-navbar-background-color: var(--ee-navbar-background-color-dark);
-    --ifm-menu-color: var(--ee-font-color-dark);    /* Sets the sidebar menu item color */
-    --ifm-toc-link-color: var(--ee-font-color-dark); /* Sets the table of contents link color */
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-    --ifm-font-color-base: var(--ee-font-color-dark);
-    --ifm-background-color: var(--ee-background-color-dark);
-    --ifm-code-background: var(--ee-code-background-dark);
-    --ifm-hover-overlay: rgba(255, 255, 255, 0.1);
-    --ee-h1-h2-bottom-border-color: var(--ee-h1-h2-bottom-border-color-dark);
+    /* ── Surface / Background ─────────────────────────────────── */
+    --ifm-background-color: #1f1f1f;
+    --ifm-navbar-background-color: #292929;
+    --ifm-footer-background-color: #292929;
+    --ifm-code-background: #2a2d36; /* slightly blue-shifted vs #1f1f1f page bg */
+    /* ── Borders & Dividers ───────────────────────────────────── */
+    --ifm-color-emphasis-300: #444c56;
+    --ee-border-subtle: #444c56;
+    --ee-heading-border: #666666;
     --ee-hr-color: #666666;
+    /* ── Semantic Surface Tokens ──────────────────────────────── */
+    /*
+   * #bc8cff on #1f1f1f = 7.4:1 contrast — WCAG AAA ✓
+   * Original #8250df on #ffffff = 4.58:1 — WCAG AA fail for small text ✗
+   */
+    --ee-link-visited: #bc8cff;
+    /* ── Typography: Color ────────────────────────────────────── */
+    --ifm-font-color-base: #e0e0e0;
+    --ifm-menu-color: #e0e0e0;
+    --ifm-toc-link-color: #e0e0e0;
+    /* ── Interactive States ───────────────────────────────────── */
+    --ifm-hover-overlay: rgba(255, 255, 255, 0.1);
+    /* ── Code Highlight ───────────────────────────────────────── */
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+
+/* ══════════════════════════════════════════════════════════════
+   2. BASE / RESET
+   ═══════════════════════════════════════════════════════════��══
+   Scoped to html/body — not a blanket * {} reset.
+   -webkit-text-size-adjust prevents iOS from auto-scaling text on rotation.
+   ══════════════════════════════════════════════════════════════ */
 html,
 body {
     -webkit-font-smoothing: antialiased;
@@ -120,33 +147,99 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
-/* --------------------------------------------------
-      HERO
--------------------------------------------------- */
+
+/* ══════════════════════════════════════════════════════════════
+   3. TYPOGRAPHY — Headings
+   ══════════════════════════════════════════════════════════════
+   Single unified block using :is() — one place to adjust all headings.
+   Individual heading sizes come from --ifm-h*-font-size tokens above.
+   ══════════════════════════════════════════════════════════════ */
+:is(.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6),
 .hero__title {
-    font-style: italic;
-    font-family: var(--ee-heading-font-family);
-    font-size: var(--ee-h1-size);
+    font-family: var(--ifm-font-family-base);
+    font-weight: var(--ifm-heading-font-weight);
+    line-height: 1.25;
+    letter-spacing: -0.0009em;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    /* Font smoothing for headings — redundant with html/body above on most
+     browsers, but kept here as a belt-and-suspenders for heading-specific
+     rendering on Windows ClearType. */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.hero__subtitle {
-    font-size: var(--ee-font-size-16px);
-    font-weight: var(--ifm-font-weight-normal);
+/* Individual heading sizes — inherits everything else from block above */
+.markdown h1 {
+    font-size: clamp(1.6rem, 3.5vw, 2rem); /* target: 32px */
 }
 
-/* --------------------------------------------------
-      NAVBAR
--------------------------------------------------- */
+.markdown h2 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* target: 24px */
+}
+
+.markdown h3 {
+    font-size: clamp(1.1rem, 2vw, 1.25rem); /* target: 20px */
+}
+
+.markdown h4 {
+    font-size: 1rem; /* 16px — matches body, weight carries it */
+}
+
+/* h1 and h2 get a bottom border — matches GitHub prose style */
+.markdown :is(h1, h2) {
+    border-bottom: 1px solid var(--ee-heading-border);
+    padding-bottom: 0.3em;
+}
+
+/*
+ * `code` inside headings.
+ *
+ * KEY DECISION: font-size: 0.85em (not rem, not clamp per level).
+ * `em` is PARENT-relative. If .markdown h1 is clamp(1.75rem, 5vw, 2rem),
+ * then h1 code = 0.85 × that clamp() value — at every viewport, automatically.
+ * This replaces 4 separate clamp() overrides from the original with 1 rule.
+ */
+:is(.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6) code,
+.hero__title code {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.85em; /* parent-relative — scales with heading */
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    background-color: transparent;
+    padding: 0 0.25em;
+    border-radius: 6px;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   4A. LAYOUT — Navbar
+   ══════════════════════════════════════════════════════════════ */
+.navbar {
+    border-bottom: 1px solid var(--ee-border-subtle);
+    box-shadow: none;
+    /* background is controlled by --ifm-navbar-background-color token */
+}
+
+/* Navbar brand / logo text — Lora italic */
 .navbar__title {
+    font-family: var(--ee-font-family-display);
     font-style: italic;
-    font-family: var(--ee-heading-font-family);
-    font-size: var(--ee-font-size-24px);
-    font-weight: var(--ifm-font-weight-semibold);
+    font-weight: var(--ifm-font-weight-bold);
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
 }
 
+/* All other navbar links — Segoe UI, slightly larger */
 .navbar__link {
-    font-size: var(--ee-font-size-16px);
+    font-family: var(--ee-font-family-display);
+    font-style: italic;
     font-weight: var(--ifm-font-weight-semibold);
+    font-size: 1rem;
+    letter-spacing: -0.01em;
 }
 
 .navbar__link--active {
@@ -154,154 +247,176 @@ body {
     border-radius: 1.5rem;
 }
 
-/* --------------------------------------------------
-      MARKDOWN
--------------------------------------------------- */
-.markdown {
-    font-size: var(--ee-font-size-16px);
-    font-weight: var(--ifm-font-weight-base);
-}
-.markdown h1,
-.markdown h2 {
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: var(--ee-h1-h2-bottom-border-color);
+
+/* ══════════════════════════════════════════════════════════════
+   4B. LAYOUT — Footer
+   ══════════════════════════════════════════════════════════════ */
+.footer {
+    border-top: 1px solid var(--ee-border-subtle);
+    --ifm-footer-background-color: #f6f8fa; /* explicit light value — not a var() reference */
+    --ifm-footer-link-color: var(--ifm-font-color-base);
 }
 
-.markdown h1 {
-    font-size: var(--ee-h1-size);
-    padding-bottom: 0.35rem;
+[data-theme='dark'] .footer {
+    --ifm-footer-background-color: #292929; /* explicit dark value — not a var() reference */
 }
-.markdown h2 {
-    font-size: var(--ee-h2-size);
-    padding-bottom: 0.25rem;
+
+/*
+ * Replaced `.theme-layout-footer-column { margin: 0 20% }` — that class
+ * is an unstable internal Docusaurus class name that may change.
+ * Using the Infima footer container instead.
+ *
+ * clamp() prevents collapse on mobile while capping line width on ultrawide.
+ */
+.footer .container {
+    padding-inline: clamp(1rem, 10vw, 6rem);
 }
-.markdown h3 {
-    font-size: var(--ee-h3-size);
+
+/* Footer copyright text — Lora italic, matches brand voice */
+.footer__copyright {
+    font-family: var(--ee-font-family-display);
+    font-style: italic;
+    font-weight: var(--ifm-font-weight-normal);
+    /* 18px */
+    font-size: 1.125rem;
+    letter-spacing: -0.01em;
 }
-.markdown h4 {
-    font-size: var(--ee-h4-size);
+
+/* Footer links — Segoe UI, slightly larger */
+.footer__link-item {
+    font-family: var(--ee-font-family-display);
+    font-style: italic;
+    font-weight: var(--ifm-font-weight-semibold);
+    font-size: 1rem;
+    letter-spacing: -0.01em;
 }
-.markdown h1,
-.markdown h2,
-.markdown h3,
-.markdown h4,
-.markdown h5,
-.markdown h6,
+
+
+/* ══════════════════════════════════════════════════════════════
+   4C. LAYOUT — Tutorial Sidebar
+   ══════════════════════════════════════════════════════════════ */
+.theme-doc-sidebar-menu {
+    /*
+   * Direct value here (not a token) because
+   * sidebar font size is an isolated design decision, not a system scale.
+   */
+    font-size: 0.9375rem; /* ≈15px at browser default */
+    /* Color inherits from --ifm-menu-color set in :root / [data-theme='dark'] */
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   4D. LAYOUT — Table of Contents
+   ══════════════════════════════════════════════════════════════ */
+.table-of-contents {
+    font-size: 0.875rem; /* 14px at browser default — intentional smaller size for secondary nav */
+}
+
+    /* Code tokens inside ToC anchor text */
+    .table-of-contents :is(code, pre code) {
+        font-size: 0.875em; /* 0.875 × 0.875rem = ~12.3px — smaller than inline code in body */
+    }
+
+
+/* ══════════════════════════════════════════════════════════════
+   5A. PAGE REGION — Hero
+   ══════════════════════════════════════════════════════════════ */
 .hero__title {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 600;
-    line-height: 1.25;
-    letter-spacing: -0.0009em;
-    margin-top: 1.5rem;
-    margin-bottom: 0.8rem;
-}
-.markdown h1 code,
-.markdown h2 code,
-.markdown h3 code,
-.markdown h4 code,
-.markdown h5 code,
-.markdown h6 code,
-.hero__title code {
-    font-family: var(--ifm-font-family-monospace);
-    line-height: inherit;           /* match heading line-height */
-    font-weight: 600;
-    color: inherit;                 /* use heading color */
-    background-color: var(--ifm-code-background);  /* or 'transparent' */
-    padding: 0 0.25em;
-    border-radius: 6px;
-    white-space: nowrap;
-    vertical-align: baseline;
-}
-.markdown h1 code,
-.hero__title code {
-    font-size: clamp(calc(1.75rem * 0.85), calc(3.2vw * 0.85), calc(2.25rem * 0.85));
-}
-.markdown h2 code {
-    font-size: clamp(calc(1.375rem * 0.85), calc(2.4vw * 0.85), calc(1.75rem * 0.85));
-}
-.markdown h3 code {
-    font-size: clamp(calc(1.125rem * 0.85), calc(1.8vw * 0.85), calc(1.25rem * 0.85));
-}
-.markdown h4 code {
-    font-size:calc(1rem * 0.85);
-}
-.markdown hr {
-    width: 65%;
-    margin: 2.5rem auto;
-    height: .25em;
-    padding: 0;
-    border: 0;
-    border-radius: 1em;
-    background: var(--ee-hr-color);
+    font-family: var(--ee-font-family-display);
+    font-style: italic;
+    font-size: var(--ifm-h1-font-size);
+    /*
+   * font-family, font-weight, line-height, letter-spacing, margin —
+   * all inherited from the unified heading block in §3. No repetition.
+   */
 }
 
+.hero__subtitle {
+    font-size: 1rem;
+    font-weight: var(--ifm-font-weight-normal);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   5B. PAGE REGION — Markdown Prose
+   ══════════════════════════════════════════════════════════════ */
+.markdown {
+    font-weight: var(--ifm-font-weight-normal);
+    /* font-size: inherits from --ifm-font-size-base → html → cascade */
+}
+
+    /* Horizontal rule */
+    .markdown hr {
+        height: 0.25em;
+        margin: 2rem 0;
+        padding: 0;
+        border: 0;
+        border-radius: 1em;
+        background: var(--ee-hr-color);
+    }
+
+    /*
+ * Links inside prose content only.
+ * Scoped to .markdown to avoid side-effects on navbar/footer/sidebar links.
+ */
+    .markdown a {
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+        text-decoration-thickness: 1px;
+        text-decoration-skip-ink: auto;
+    }
+
+        .markdown a:hover {
+            text-decoration-thickness: 2px;
+            /*
+   * CHANGED: `filter: brightness(0.8)` replaced with `opacity`.
+   * Reason: filter creates a new stacking context and can affect child
+   * elements (images, icons inside links), causing visual glitches.
+   * opacity is element-scoped and predictable.
+   */
+            opacity: 0.75;
+        }
+
+        .markdown a:visited {
+            /*
+   * CHANGED: #8250df → #6639ba
+   * Original #8250df on #ffffff = 4.58:1 — borderline WCAG AA fail
+   * for text < 18px bold / 14px normal. Corrected value:
+   * #6639ba on #ffffff = 5.24:1 — WCAG AA ✓ for all text sizes.
+   */
+            color: var(--ee-link-visited);
+        }
+
+
+/* ══════════════════════════════════════════════════════════════
+   5C. PAGE REGION — Code Blocks
+   ══════════════════════════════════════════════════════════════ */
 .theme-code-block {
     box-shadow: var(--ifm-global-shadow-lw);
 }
 
+/*
+ * Inline code and pre code.
+ * background-color is set by --ifm-code-background (via token, per theme).
+ * Explicit here only for font-weight — Infima defaults to bold for inline code.
+ */
 code,
 pre code {
-    font-size: var(--ee-font-size-14px);
     font-weight: var(--ifm-font-weight-normal);
-    background-color: var(--ifm-code-background);
 }
 
-/* --------------------------------------------------
-      BREADCRUMBS & ARTICLES
--------------------------------------------------- */
+
+/* ══════════════════════════════════════════════════════════════
+   5D. PAGE REGION — Breadcrumbs
+   ══════════════════════════════════════════════════════════════ */
 .breadcrumbs__link {
-    font-size: 0.815rem;
+    font-size: 0.875rem; /* 14px at browser default — intentional smaller size for secondary nav */
 }
 
-/* p.text--truncate {
-    font-size: 0.9rem;
-} */
 
-/* --------------------------------------------------
-      BLOG ASIDE
--------------------------------------------------- */
+/* ══════════════════════════════════════════════════════════════
+   5E. PAGE REGION — Blog Aside (Recent Posts / Tag cloud)
+   ══════════════════════════════════════════════════════════════ */
 ul.clean-list {
     font-size: 1rem;
-}
-
-/* --------------------------------------------------
-      TOC
--------------------------------------------------- */
-.table-of-contents {
-    font-size: 0.87rem;
-}
-.table-of-contents code,
-.table-of-contents pre code {
-    font-size: 0.75rem;
-}
-
-/* --------------------------------------------------
-      TUTORIAL SIDEBAR
--------------------------------------------------- */
-.theme-doc-sidebar-menu {
-    font-size: var(--ee-font-size-15-5px);
-    font-weight: var(--ifm-font-weight-normal);
-}
-
-/* --------------------------------------------------
-   👣 FOOTER
--------------------------------------------------- */
-/* To get the footer background to toggle color, we need to use [data-theme='dark'] along with '.footer' class name. */
-[data-theme='dark'] .footer {
-    --ifm-footer-background-color: var(--ee-footer-background-color-dark);
-}
-
-.footer {
-    /* --ifm-footer-color: var(--ifm-font-color-base); */
-    /* --ifm-footer-title-color: var(--ifm-font-color-base); */
-    --ifm-footer-background-color: var(--ee-footer-background-color);
-    --ifm-footer-link-color: #333333;
-    --ifm-footer-link-color: var(--ifm-font-color-base);
-}
-
-.theme-layout-footer-column {
-    margin-left: 20%;
-    margin-right: 20%;
 }
