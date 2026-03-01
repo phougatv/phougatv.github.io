@@ -1,6 +1,6 @@
 ---
-title: 'Docusaurus Configuration'
 sidebar_label: Docusaurus Configuration
+title: ''
 ---
 
 ## 1. Switching themes
