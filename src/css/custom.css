@@ -110,7 +110,7 @@
     --ifm-background-color: #1f1f1f;
     --ifm-navbar-background-color: #292929;
     --ifm-footer-background-color: #292929;
-    --ifm-code-background: #2a2d36; /* slightly blue-shifted vs #1f1f1f page bg */
+    --ifm-code-background: #373e47; /* slightly blue-shifted vs #1f1f1f page bg */
     /* ── Borders & Dividers ───────────────────────────────────── */
     --ifm-color-emphasis-300: #444c56;
     --ee-border-subtle: #444c56;
@@ -403,6 +403,7 @@ body {
 code,
 pre code {
     font-weight: var(--ifm-font-weight-normal);
+    font-size: 0.8rem;
 }
 
 
