@@ -4,7 +4,7 @@ sidebar_label: Best Practices & Guidelines
 sidebar_position: 0
 ---
 
-# 1. Framework design guidelines
+## 1. Framework design guidelines
 - [Framework Design Guidelines - MSDN](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/)
 
 ## 2. Code analysis and quality
